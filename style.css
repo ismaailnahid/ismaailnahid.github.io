@@ -1,31 +1,46 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center center/cover;
+    filter: blur(8px);
+    z-index: -1;
 }
 
 .container {
     text-align: center;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 500px;
 }
 
 header h1 {
     font-size: 2.5em;
-    color: #333;
+    color: #fff;
     margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 header p {
     font-size: 1.2em;
-    color: #666;
+    color: #ddd;
     margin: 10px 0 20px;
 }
 
@@ -34,28 +49,31 @@ header p {
 }
 
 .social-links a {
-    color: #333;
-    font-size: 2em;
-    margin: 0 15px;
+    color: #fff;
+    font-size: 2.5em;
+    margin: 0 20px;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: transform 0.3s, color 0.3s;
 }
 
 .social-links a:hover {
-    color: #007BFF;
+    color: #00d4ff;
+    transform: scale(1.2);
 }
 
 .cta-button {
-    background-color: #28a745;
+    background: linear-gradient(45deg, #ff007a, #007bff);
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 12px 30px;
     font-size: 1.2em;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
-    background-color: #218838;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
