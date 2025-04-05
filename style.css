@@ -86,7 +86,7 @@ header h1 {
     box-shadow: 0 15px 35px rgba(0, 255, 204, 0.5);
 }
 
-/* Animation keyframes */
+/* Animation keyframes 
 @keyframes slideDown {
     0% {
         transform: translateY(-100px);
@@ -98,13 +98,7 @@ header h1 {
     }
 }
 
-@media (max-width: 480px) {
-    .profile-picture img {
-        width: 120px;
-        height: 120px;
-    }
-}
-
+*/
 
     
 header p {
