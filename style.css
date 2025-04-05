@@ -5,12 +5,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-y: auto;
 }
 
 .background {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -28,7 +28,8 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.4);
-    max-width: 600px;
+    max-width: 700px;
+    margin: 20px;
 }
 
 header h1 {
@@ -103,9 +104,45 @@ header p {
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    margin-bottom: 30px;
 }
 
 .cta-button:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.bio-text {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.bio-text p {
+    font-size: 1.1em;
+    color: #fff;
+    margin: 10px 0;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.bio-text p:hover {
+    transform: translateX(10px);
+    color: #ffeb3b;
+}
+
+.bio-text p.edu {
+    font-style: italic;
+    color: #00ffcc;
+    font-size: 1em;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+.bio-text p.edu:hover {
+    color: #ffd700;
+    transform: translateX(0);
 }
