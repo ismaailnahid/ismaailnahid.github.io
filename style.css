@@ -108,7 +108,6 @@ header p {
     transform: scale(1.1);
 }
 
-/*
 .cta-button {
     background: linear-gradient(135deg, #ff6ec4, #7873f5);
     color: white;
@@ -132,33 +131,6 @@ header p {
     50% { transform: scale(1.05); background-color: #00ffd5; }
     100% { transform: scale(1); background-color: #ff6ec4; }
 }
-*/
-
-.contact-title {
-    font-size: 2.5em;
-    font-weight: bold;
-    background: linear-gradient(45deg, #00c6ff, #0072ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    margin: 40px 0 20px;
-    letter-spacing: 2px;
-    animation: shimmerText 3s infinite ease-in-out;
-    text-shadow: 1px 1px 8px rgba(0, 136, 255, 0.4);
-}
-
-@keyframes shimmerText {
-    0% {
-        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-    }
-    50% {
-        text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
-    }
-    100% {
-        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-    }
-}
-
 
 .bio-text {
     margin-top: 30px;
