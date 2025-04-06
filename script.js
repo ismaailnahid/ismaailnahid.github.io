@@ -37,4 +37,29 @@
             alert('মোবাইল নম্বর কপি হয়েছে!');
         });
     }
+
+
+
+
+    window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader');
+    const main = document.querySelector('.main-content');
+    const sound = document.getElementById('introSound');
+
+    // Play sound
+    sound.play();
+
+    // Loader zoom out effect
+    setTimeout(() => {
+      loader.style.opacity = '0';
+      loader.style.transform = 'scale(20)';
+    }, 1500); // ছবিটা আসার পর
+
+    // Show main content
+    setTimeout(() => {
+      loader.style.display = 'none';
+      main.style.opacity = '1';
+      main.style.transform = 'scale(1)';
+    }, 2500);
+  });
 </script>
