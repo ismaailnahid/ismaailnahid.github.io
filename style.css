@@ -16,7 +16,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://unsplash.com/photos/laptop-on-brown-sofa-1gLdTsX3_70') no-repeat center center/cover;
+    background: url('dell-1gLdTsX3_70-unsplash.jpg') no-repeat center center/cover;
     filter: blur(10px) brightness(0.7);
     z-index: -1;
 }
