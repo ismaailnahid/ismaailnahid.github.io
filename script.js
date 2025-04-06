@@ -62,4 +62,5 @@
       main.style.transform = 'scale(1)';
     }, 2500);
   });
+}
 </script>
