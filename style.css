@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -8,47 +9,9 @@ body {
     min-height: 100vh;
     background: #0f2027;
     overflow-y: auto;
-}
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: radial-gradient(circle at center, #000000 20%, #1a1a1a 100%);
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 1s ease, transform 1s ease;
+
 }
 
-.loader img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 6px solid #00ffcc;
-  box-shadow: 0 0 30px #00ffcc;
-  animation: popDown 1.2s ease-out forwards;
-  opacity: 0;
-}
-
-@keyframes popDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-100px) scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.main-content {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 1s ease, transform 1s ease;
-}
 
 
 .background {
@@ -57,9 +20,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('dell-1gLdTsX3_70-unsplash.jpg') no-repeat center center/cover;
+    background: url('bgg.jpg') no-repeat center center/cover;
     filter: blur(10px) brightness(0.7);
     z-index: -1;
+
 }
 
 .container {
@@ -69,7 +33,7 @@ body {
     padding: 60px 40px;
     border-radius: 25px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid #00ffff77;
     max-width: 800px;
     margin: 30px;
     animation: fadeInUp 1s ease-in-out;
@@ -91,6 +55,10 @@ header h1 {
     animation: glowGreen 2s ease-in-out infinite alternate;
     letter-spacing: 2px;
     text-transform: uppercase;
+    user-select: none; /* Mouse diye text select করা যাবে না */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 @keyframes glowGreen {
@@ -106,16 +74,24 @@ header h1 {
     
 header p {
     font-size: 1.4em;
-    color: #f0f0f0;
+    color: #00ffcc;
     margin: 20px 0 30px;
+    user-select: none; /* Mouse diye text select করা যাবে না */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-.social-links {
+ .social-links {
     margin: 40px 0;
+    user-select: none; /* Mouse diye text select করা যাবে না */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .social-links a {
-    color: #ffffff;
+    color: #1eaf7f;
     font-size: 2.5em;
     margin: 0 15px;
     text-decoration: none;
@@ -127,6 +103,8 @@ header p {
     transform: scale(1.2) rotate(5deg);
     text-shadow: 0 0 15px #00ffff;
 }
+/* Tooltip styling */
+
 
 .contact-info {
     margin: 30px 0;
@@ -134,11 +112,15 @@ header p {
 
 .contact-link {
     display: inline-block;
-    color: #ffffff;
+    color: #bbff00;
     font-size: 1.3em;
     margin: 10px 25px;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
+    user-select: none; /* Mouse diye text select করা যাবে না */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .contact-link i {
@@ -146,12 +128,12 @@ header p {
 }
 
 .contact-link:hover {
-    color: #ff6ec4;
+    color: #00ff88;
     transform: scale(1.1);
 }
 
 .cta-button {
-    background: linear-gradient(135deg, #ff6ec4, #7873f5);
+    background: linear-gradient(135deg, #2c1fe9, #7873f5);
     color: white;
     border: none;
     padding: 16px 50px;
@@ -161,6 +143,10 @@ header p {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease-in-out;
     animation: pulse 2.5s infinite;
+    user-select: none; /* Mouse diye text select করা যাবে না */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .cta-button:hover {
@@ -180,11 +166,15 @@ header p {
     background: rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    user-select: none; /* Mouse diye text select করা যাবে না */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .bio-text p {
     font-size: 1.15em;
-    color: #ffffff;
+    color: #06ca51;
     margin: 12px 0;
     letter-spacing: 1px;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
@@ -200,14 +190,15 @@ header p {
     font-style: italic;
     color: #00ffcc;
     font-size: 1em;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 0px solid #00ffff77;
     padding-top: 10px;
     margin-top: 25px;
 }
 
 .bio-text p.edu:hover {
     color: #ffd700;
-    transform: translateX(0);
+    transform: translateX(15px);
+
 }
 
 /* RESPONSIVE SECTION */
@@ -305,6 +296,10 @@ header p {
   margin-bottom: 30px;
   animation: slideDown 1s ease forwards;
   opacity: 0;
+  user-select: none; /* Mouse diye text select করা যাবে না */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .profile-picture img {
@@ -333,3 +328,56 @@ header p {
 }
 
 
+
+  .container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px) saturate(180%);
+  }
+  header h1 {
+    font-family: 'Orbitron', sans-serif;
+}
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #00ffcc, #005555);
+    color: #fff;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow:
+      0 8px 20px rgba(0, 255, 204, 0.4),
+      0 0 15px rgba(0, 255, 255, 0.6),
+      inset 0 0 5px rgba(255, 255, 255, 0.2);
+    transform: scale(0.5) rotateX(90deg) rotateY(90deg);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.25, 1.3, 0.5, 1);
+    z-index: 9999;
+    pointer-events: none;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: scale(1) rotateX(0) rotateY(0);
+  }
+  .toast.hide {
+    opacity: 0;
+    transform: scale(0.5) rotateX(90deg) rotateY(90deg);
+    transition: all 0.5s ease-in;
+  }
+  
+    
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+  }
+  
+  .toast.shake {
+    animation: shake 0.5s ease;
+  }
+  
