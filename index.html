@@ -8,18 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="script.js"></script>
 </head>
-<body>
-    <!-- Loader -->
-<div class="loader">
-  <img src="pp.jpg" alt="Ismaail Nahid">
-</div>
-
-<!-- Background Sound -->
-<audio id="introSound" src="music.mp3" preload="auto"></audio>
-
-<!-- Main Content -->
-
-    <div class="main-content">
+<body>    
+    <audio id="toastSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_005683dc43.mp3" preload="auto"></audio> 
     <div class="background"></div>
     <div class="container">
         <div class="profile-picture">
@@ -30,17 +20,20 @@
             <p>আমার সাথে সংযুক্ত হও, আপডেট থাকো!</p>
         </header>
         <div class="social-links">
-            <a href="https://facebook.com/ismaailnahid" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com/ismaailnahid" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/ismaailnahid" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://github.com/ismaailnahid" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://facebook.com/ismaailnahid" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/ismaailnahid" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/ismaailnahid" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com/ismaailnahid" target="_blank"><i class="fab fa-github"></i></a>
         </div>
+        
         <div class="contact-info">
             <a href="mailto:ismaailnahid@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> ইমেইল করো</a>
             <a href="tel:+8801995845496" class="contact-link"><i class="fas fa-phone"></i> কল করো</a>
         </div>
         <button class="cta-button">আমার সোশ্যাল হাব</button>
         <div class="bio-text">
+            <audio id="toastSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_005683dc43.mp3" preload="auto"></audio> 
+
             <p>Ƥʀơƒɩլє Ɣєʀɩƒɩєɗ ƛʋƭӈєɲƭɩƈ Ơʀɠɩɲƛլ...</p>
             <p>Ɲơƭ ƛլɯƛƴƨ ƛɣƛɩլƛɓլє Ƭʀƴ Ƴơʋʀ Լʋƈƙ</p>
             <p>Ɩ'єm ƛ Ɠơơɗ'ɓơƴ Ɯɩƭӈ Mƴ Ɓƛɗ'ӈƛɓɩƭƨ</p>
@@ -66,5 +59,109 @@
         </div>
     </div>
     </div>
+    <audio id="toastSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_005683dc43.mp3" preload="auto"></audio> 
+
+    <!-- Notification Popup -->
+<div id="customToast" class="toast hide">Copied!</div>
+<audio id="toastSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_005683dc43.mp3" preload="auto"></audio> 
+
+
+    <!-- নিচের স্ক্রিপ্টটা তোমার HTML এর </body> ট্যাগের ঠিক আগে বসাও -->
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+            });
+          });
+        });
+      
+        // CTA Button
+        const ctaButton = document.querySelector('.cta-button');
+        if(ctaButton){
+          ctaButton.addEventListener('click', () => {
+            showToast('ধন্যবাদ! আপনি যোগাযোগ বাটনে ক্লিক করেছেন।');
+          });
+        }
+      
+        // Tooltip for copy email
+        const emailLink = document.querySelector('a[href^="mailto:"]');
+        if(emailLink){
+          emailLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigator.clipboard.writeText(emailLink.href.replace('mailto:', ''));
+            showToast('ইমেইল ঠিকানা ক্লিপবোর্ডে কপি হয়েছে!');
+          });
+        }
+      
+        // Tooltip for copy phone
+        const phoneLink = document.querySelector('a[href^="tel:"]');
+        if(phoneLink){
+          phoneLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigator.clipboard.writeText(phoneLink.href.replace('tel:', ''));
+            showToast('মোবাইল নম্বর কপি হয়েছে!');
+          });
+        }
+      
+        // Toast Function
+        function showToast(message) {
+          const toast = document.getElementById('customToast');
+          toast.textContent = message;
+          toast.classList.remove('hide');
+          toast.classList.add('show');
+      
+          setTimeout(() => {
+            toast.classList.remove('show');
+            toast.classList.add('hide');
+          }, 3000); // ৩ সেকেন্ড পর হাইড হবে
+        }
+// Show 3D Toast Function
+function showToast(message = "নোটিফিকেশন") {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerText = message;
+
+    document.body.appendChild(toast);
+
+    // Play Sound
+    const sound = document.getElementById('toastSound');
+    if (sound) sound.play();
+
+    setTimeout(() => {
+      toast.classList.add('show', 'shake');
+    }, 100);
+
+    setTimeout(() => {
+      toast.classList.remove('show');
+      toast.classList.add('hide');
+    }, 4000);
+
+    setTimeout(() => {
+      toast.remove();
+    }, 4600);
+  }
+
+  // Block Right Click
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+    showToast("🚫 রাইট-ক্লিক বন্ধ করা হয়েছে!");
+  });
+
+  // Block Copy
+  document.addEventListener('copy', function (e) {
+    e.preventDefault();
+    showToast("❌ এই কনটেন্ট কপি নিষিদ্ধ!");
+  });
+
+  // Block Cut
+  document.addEventListener('cut', function (e) {
+    e.preventDefault();
+    showToast("✂️ কাট করা যাবে না!");
+  });
+      </script>
+      
 </body>
 </html>
